@@ -21,7 +21,7 @@ double Subtract(double[] nums)
 
 double Add(double[] nums)
 {
-    throw new NotImplementedException();
+    return nums[0] + nums[1];
 }
 
 double[] getNumbersFromUser()
