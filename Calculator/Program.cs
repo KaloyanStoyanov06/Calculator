@@ -17,7 +17,10 @@ while (command != "End")
             break;
         case "Multiply":
             {
-                result = Multiply(getNumbersFromUser());
+                double number1 = double.Parse(Console.ReadLine());
+                double number2 = double.Parse(Console.ReadLine());
+
+                result = Multiply(number1, number2);
             }
             break;
         case "Divide":
@@ -54,10 +57,9 @@ double Power(double[] vs)
 {
     return number1 / number2;
 }    
-
-double Multiply(double[] vs)
+double Multiply(double number1, double number2)
 {
-    throw new NotImplementedException();
+    return number1 * number2;
 }
 
 double Subtract(double[] vs)
