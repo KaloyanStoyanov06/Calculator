@@ -53,10 +53,10 @@ double Power(double[] vs)
 {
     throw new NotImplementedException();
 }
- double Divide(double number1, double number2)
+double Divide(double number1, double number2)
 {
     return number1 / number2;
-}    
+}
 double Multiply(double number1, double number2)
 {
     return number1 * number2;
@@ -64,7 +64,7 @@ double Multiply(double number1, double number2)
 
 double Subtract(double[] vs)
 {
-    throw new NotImplementedException();
+    return vs[0] - vs[1];
 }
 
 double Add(double[] vs)
