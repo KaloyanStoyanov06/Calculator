@@ -1,79 +1,30 @@
-﻿#region main
-string command = Console.ReadLine();
-double result = double.MinValue;
-while (command != "End")
-{
-    switch (command)
-    {
-        case "Add":
-            {
-                result = Add(getNumbersFromUser());
-            }
-            break;
-        case "Subtract":
-            {
-                result = Subtract(getNumbersFromUser());
-            }
-            break;
-        case "Multiply":
-            {
-                double number1 = double.Parse(Console.ReadLine());
-                double number2 = double.Parse(Console.ReadLine());
-
-                result = Multiply(number1, number2);
-            }
-            break;
-        case "Divide":
-            {
-                double number1 = double.Parse(Console.ReadLine());
-                double number2 = double.Parse(Console.ReadLine());
-
-                result = Divide(number1, number2);
-            }
-            break;
-        case "Power":
-            {
-                result = Power(getNumbersFromUser());
-            }
-            break;
-        case "End":
-            break;
-        default:
-            Console.WriteLine("Invalid Command!");
-            break;
-    }
-    if (result != double.MinValue)
-    {
-        Console.WriteLine($"Result: {result}");
-    }
-    command = Console.ReadLine();
-}
-
+﻿#region functions
 double Power(double[] vs)
 {
     throw new NotImplementedException();
 }
-double Divide(double number1, double number2)
+
+double Divide(double[] nums)
 {
-    return number1 / number2;
-}
-double Multiply(double number1, double number2)
-{
-    return number1 * number2;
+    return nums[0] / nums[1];
 }
 
-double Subtract(double[] vs)
+double Multiply(double[] nums)
 {
-    return vs[0] - vs[1];
+    return nums[0] * nums[1];
 }
 
-double Add(double[] vs)
+double Subtract(double[] nums)
+{
+    return nums[0] - nums[1];
+}
+
+double Add(double[] nums)
 {
     throw new NotImplementedException();
 }
-#endregion
 
-static double[] getNumbersFromUser()
+double[] getNumbersFromUser()
 {
     Console.WriteLine("Please enter a number:");
     double firstNum = double.Parse(Console.ReadLine());
@@ -82,3 +33,50 @@ static double[] getNumbersFromUser()
 
     return new double[] { firstNum, secondNum };
 }
+#endregion
+
+#region main
+
+Console.Write("Please enter an operator: ");
+string command = Console.ReadLine();
+double result = 0;
+
+while (command != "End")
+{
+    switch (command)
+    {
+        case "+":
+            result = Add(getNumbersFromUser());
+            break;
+
+        case "-":
+            result = Subtract(getNumbersFromUser());
+            break;
+
+        case "*":
+            result = Multiply(getNumbersFromUser());
+            break;
+        case "/":
+            result = Divide(getNumbersFromUser());
+            break;
+
+        case "^":
+            result = Power(getNumbersFromUser());
+            break;
+
+        case "End":
+            return;
+
+        default:
+            Console.WriteLine("Invalid Command!");
+            break;
+    }
+
+    Console.WriteLine($"Result: {result}");
+
+
+    Console.Write("Please enter an operator: ");
+    command = Console.ReadLine();
+}
+
+#endregion
