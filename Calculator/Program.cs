@@ -22,7 +22,10 @@ while (command != "End")
             break;
         case "Divide":
             {
-                result = Divide(getNumbersFromUser());
+                double number1 = double.Parse(Console.ReadLine());
+                double number2 = double.Parse(Console.ReadLine());
+
+                result = Divide(number1, number2);
             }
             break;
         case "Power":
@@ -47,11 +50,10 @@ double Power(double[] vs)
 {
     throw new NotImplementedException();
 }
-
-double Divide(double[] vs)
+ double Divide(double number1, double number2)
 {
-    throw new NotImplementedException();
-}
+    return number1 / number2;
+}    
 
 double Multiply(double[] vs)
 {
