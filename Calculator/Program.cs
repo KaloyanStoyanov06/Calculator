@@ -26,9 +26,9 @@ double Add(double[] nums)
 
 double[] getNumbersFromUser()
 {
-    Console.WriteLine("Please enter a number:");
+    Console.Write("Please enter a number:");
     double firstNum = double.Parse(Console.ReadLine());
-    Console.WriteLine("Please enter a second number:");
+    Console.Write("Please enter a second number:");
     double secondNum = double.Parse(Console.ReadLine());
 
     return new double[] { firstNum, secondNum };
@@ -43,6 +43,7 @@ double result = 0;
 
 while (command != "End")
 {
+    // Every function
     switch (command)
     {
         case "+":
@@ -74,7 +75,14 @@ while (command != "End")
 
     Console.WriteLine($"Result: {result}");
 
+    // Empty line
+    Console.WriteLine("");
 
+    // A confirmation to continue
+    Console.Write("Press any key to continue...");
+    Console.ReadKey();
+
+    // Next input
     Console.Write("Please enter an operator: ");
     command = Console.ReadLine();
 }
