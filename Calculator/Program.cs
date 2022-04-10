@@ -1,7 +1,7 @@
 ﻿#region functions
 double Power(double[] vs)
 {
-    throw new NotImplementedException();
+    return Math.Pow(vs[0], vs[1]);
 }
 
 double Divide(double[] nums)
