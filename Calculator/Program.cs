@@ -81,6 +81,8 @@ while (command != "End")
     // A confirmation to continue
     Console.Write("Press any key to continue...");
     Console.ReadKey();
+    
+    Console.Clear();
 
     // Next input
     Console.Write("Please enter an operator: ");
